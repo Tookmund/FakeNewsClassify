@@ -10,7 +10,7 @@ totalFake = 0
 
 data = []
 
-with open('data/FakeNewsCorpus.csv', 'rU') as csvfile:
+with open('data/FakeNewsCorpus.csv', 'rU', newline='') as csvfile:
     reader = csv.reader(csvfile, dialect='excel')
     for row in reader:
         if len(row) < 16:

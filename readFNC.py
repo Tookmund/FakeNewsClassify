@@ -1,6 +1,8 @@
 import csv
 import sys
 
+import cleantext
+
 csv.field_size_limit(sys.maxsize)
 
 totalReal = 0
@@ -19,7 +21,10 @@ with open('data/FakeNewsCorpus.csv', 'rU') as csvfile:
             totalFake += 1
         else:
             continue
-        data.append((row[5], row[3]))
+        data.append([row[5], row[3]])
 
     print("Real: %d" % totalReal)
     print("Fake: %d" % totalFake)
+
+for i in range(len(data)):
+    data[i][0] = cleantext.cleanText(data[i][0])

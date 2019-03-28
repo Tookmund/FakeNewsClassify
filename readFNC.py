@@ -3,19 +3,18 @@ import sys
 
 csv.field_size_limit(sys.maxsize)
 
-totalReal = 0
-totalFake = 0
+real = []
+fake = []
 
 with open('data/FakeNewsCorpus.csv', 'rU') as csvfile:
     reader = csv.reader(csvfile, dialect='excel')
     for row in reader:
-        if len(row) < 3:
-            print(row)
+        if len(row) < 16:
             continue
         if row[3] == 'fake':
-            totalFake += 1
+            fake.append(row)
         elif row[3] == 'reliable':
-            totalReal += 1
+            real.append(row)
 
-    print("Real: %d" % totalReal)
-    print("Fake: %d" % totalFake)
+    print("Real: %d" % len(real))
+    print("Fake: %d" % len(fake))

@@ -3,7 +3,7 @@ import csv
 totalReal = 0
 totalFake = 0
 
-with open('FakeNewsCorpus.csv') as csvfile:
+with open('FakeNewsCorpus.csv', 'rU') as csvfile:
     reader = csv.reader(csvfile)
     for row in reader:
         if row[3] == 'fake':

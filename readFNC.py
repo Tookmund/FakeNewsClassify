@@ -23,6 +23,7 @@ with open('data/FakeNewsCorpus.csv', 'rU', newline='') as csvfile:
             continue
         ct = cleantext.cleanText(row[5])
         data.append([ct, row[3]])
+        print(row[1])
 
     print("Real: %d" % totalReal)
     print("Fake: %d" % totalFake)

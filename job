@@ -3,6 +3,6 @@
 #PBS -N FakeNews
 
 cd $PBS_O_WORKDIR
-module load anaconda
+module load anaconda3/4.4.0
 
 python readFNC.py

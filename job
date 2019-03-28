@@ -4,4 +4,5 @@
 #PBS -j oe
 #PBS -o TOTALS
 
+cd $PBS_O_WORKDIR
 python readFNC.py

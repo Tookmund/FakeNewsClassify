@@ -7,7 +7,7 @@ totalReal = 0
 totalFake = 0
 
 with open('data/FakeNewsCorpus.csv', 'rU') as csvfile:
-    reader = csv.reader(csvfile)
+    reader = csv.reader(csvfile, dialect='excel')
     for row in reader:
         if len(row) < 3:
             print(row)

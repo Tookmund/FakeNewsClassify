@@ -19,7 +19,7 @@ def documentFeatures(document):
 
 featuresets = [(documentFeatures(d[0]), d[1]) for d in readFNC.data]
 
-TESTNUM = int((readFNC.totalReal+readFNC.totalFake)/2)
+TESTNUM = int(readFNC.total/2)
 testSet = featuresets[:TESTNUM]
 trainSet = featuresets[TESTNUM:]
 

@@ -8,7 +8,7 @@ random.shuffle(readFNC.data)
 
 allwords = nltk.FreqDist(w.lower() for d in readFNC.data for w in d[0])
 
-wordfeatures = list(allwords)[:2000]
+wordfeatures = [w[0] for w in allwords.most_common(2000)]
 
 def documentFeatures(document):
     documentWords = set(document)

@@ -8,7 +8,8 @@ csv.field_size_limit(sys.maxsize)
 totalReal = 0
 totalFake = 0
 total = 0
-MAX = 100000
+MAX = 10000
+EACH = 1000
 
 data = []
 
@@ -18,8 +19,12 @@ with open('data/FakeNewsCorpus.csv', 'rU', newline='') as csvfile:
         if len(row) < 16:
             continue
         if row[3] == 'fake':
+            if totalFake >= EACH:
+                continue
             totalReal += 1
         elif row[3] == 'reliable':
+            if totalReal >= EACH:
+                continue
             totalFake += 1
         else:
             continue

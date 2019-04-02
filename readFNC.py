@@ -34,6 +34,8 @@ with open('data/FakeNewsCorpus.csv', 'rU', newline='') as csvfile:
         total += 1
         if total > MAX:
             break
+        if totalFake >= EACH and totalReal >= EACH:
+            break
 
     print("Real: %d" % totalReal)
     print("Fake: %d" % totalFake)

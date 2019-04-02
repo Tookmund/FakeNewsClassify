@@ -8,7 +8,6 @@ csv.field_size_limit(sys.maxsize)
 totalReal = 0
 totalFake = 0
 total = 0
-MAX = 10000
 EACH = 1000
 
 data = []
@@ -32,8 +31,6 @@ with open('data/FakeNewsCorpus.csv', 'rU', newline='') as csvfile:
         data.append([ct, row[3]])
         print(row[1])
         total += 1
-        if total > MAX:
-            break
         if totalFake >= EACH and totalReal >= EACH:
             break
 

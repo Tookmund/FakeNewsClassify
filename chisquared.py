@@ -1,3 +1,5 @@
+import nltk
+
 import readFNC
 
 # Who are the authors we are analyzing?
@@ -13,21 +15,22 @@ for i in range(TEST):
     author_tokens[d[1]].extend(d[0])
 
 author_tokens["Disputed"] = []
-for i in range(TEST, total):
+for i in range(TEST, readFNC.total):
     author_tokens["Disputed"].extend(readFNC.data[i][0])
 
+
+author_length_distributions = {}
 # Calculate chisquared for each of the two candidate authors
 for author in authors:
-
     # First, build a joint corpus and identify the 10 most frequent words in it
-    joint_corpus = (play_by_author_tokens[author] +
-                    play_by_author_tokens["Disputed"])
+    joint_corpus = (author_tokens[author] +
+                    author_tokens["Disputed"])
     joint_freq_dist = nltk.FreqDist(joint_corpus)
     most_common = list(joint_freq_dist.most_common(10))
 
     # What proportion of the joint corpus is made up
     # of the candidate author's tokens?
-    author_share = (len(play_by_author_tokens[author])
+    author_share = (len(author_tokens[author])
                     / len(joint_corpus))
 
     # Now, let's look at the 10 most common words in the candidate
@@ -38,8 +41,8 @@ for author in authors:
     for word,joint_count in most_common:
 
         # How often do we really see this common word?
-        author_count = play_by_author_tokens[author].count(word)
-        disputed_count = play_by_author_tokens["Disputed"].count(word)
+        author_count = author_tokens[author].count(word)
+        disputed_count = author_tokens["Disputed"].count(word)
 
         # How often should we see it?
         expected_author_count = joint_count * author_share

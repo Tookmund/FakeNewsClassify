@@ -1,10 +1,7 @@
 import nltk
-import random
 
 import cleantext
 import readFNC
-
-random.shuffle(readFNC.data)
 
 allwords = nltk.FreqDist(w.lower() for d in readFNC.data for w in d[0])
 

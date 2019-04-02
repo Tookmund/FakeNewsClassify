@@ -1,5 +1,6 @@
 import csv
 import sys
+import random
 
 import cleantext
 
@@ -34,6 +35,7 @@ with open('data/FakeNewsCorpus.csv', 'rU', newline='') as csvfile:
         if totalFake >= EACH and totalReal >= EACH:
             break
 
-    print("Real: %d" % totalReal)
-    print("Fake: %d" % totalFake)
-    print("Total: %d" % total)
+print("Real: %d" % totalReal)
+print("Fake: %d" % totalFake)
+print("Total: %d" % total)
+random.shuffle(data)

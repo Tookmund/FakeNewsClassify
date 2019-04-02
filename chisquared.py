@@ -3,13 +3,18 @@ import readFNC
 # Who are the authors we are analyzing?
 authors = ("fake", "reliable")
 
-# Lowercase the tokens so that the same word, capitalized or not,
-# counts as one word
-for author in authors:
-    play_by_author_tokens[author] = (
-        [token.lower() for token in play_by_author_tokens[author]])
-play_by_author_tokens["Disputed"] = (
-    [token.lower() for token in play_by_author_tokens["Disputed"]])
+author_tokens = {}
+for a in authors:
+    author_tokens[a] = []
+
+TEST = int(readFNC.total/2)
+for i in range(TEST):
+    d = readFNC.data[i]
+    author_tokens[d[1]].extend(d[0])
+
+author_tokens["Disputed"] = []
+for i in range(TEST, total):
+    author_tokens["Disputed"].extend(readFNC.data[i][0])
 
 # Calculate chisquared for each of the two candidate authors
 for author in authors:

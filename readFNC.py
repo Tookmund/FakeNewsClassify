@@ -21,11 +21,11 @@ with open('data/FakeNewsCorpus.csv', 'rU', newline='') as csvfile:
         if row[3] == 'fake':
             if totalFake >= EACH:
                 continue
-            totalReal += 1
+            totalFake += 1
         elif row[3] == 'reliable':
             if totalReal >= EACH:
                 continue
-            totalFake += 1
+            totalReal += 1
         else:
             continue
         ct = cleantext.cleanText(row[5])

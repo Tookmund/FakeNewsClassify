@@ -8,7 +8,7 @@ csv.field_size_limit(sys.maxsize)
 totalReal = 0
 totalFake = 0
 total = 0
-EACH = 1000
+EACH = 5000
 
 data = []
 

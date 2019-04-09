@@ -15,12 +15,17 @@ for i in range(TEST):
     author_tokens[d[1]].extend(d[0])
 
 author_tokens["Disputed"] = []
+correct_author = []
 for i in range(TEST, readFNC.total):
     author_tokens["Disputed"].append(readFNC.data[i][0])
+    correct_author.append(readFNC.data[i][1])
 
 author_length_distributions = {}
+correct = 0
 # Calculate chisquared for each of the two candidate authors
-for d in author_tokens["Disputed"]:
+for i in range(len(author_tokens["Disputed"])):
+    d = author_tokens["Disputed"][i]
+    da = {}
     for author in authors:
         # First, build a joint corpus and identify the 10 most frequent words in it
         joint_corpus = (author_tokens[author] + d)
@@ -41,7 +46,7 @@ for d in author_tokens["Disputed"]:
 
             # How often do we really see this common word?
             author_count = author_tokens[author].count(word)
-            disputed_count = author_tokens["Disputed"].count(word)
+            disputed_count = d.count(word)
 
             # How often should we see it?
             expected_author_count = joint_count * author_share
@@ -55,5 +60,9 @@ for d in author_tokens["Disputed"]:
             chisquared += ((disputed_count-expected_disputed_count) *
                            (disputed_count-expected_disputed_count)
                            / expected_disputed_count)
+        da[author] = chisquared
+    auth = min((v, k) for (k,v) in da.items())[1]
+    if auth == correct_author[i]:
+        correct += 1
 
-        print("Distance to ", author, "is",   str(round(chisquared, 2)) )
+print(correct/len(author_tokens["Disputed"]))

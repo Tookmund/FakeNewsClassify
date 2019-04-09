@@ -1,6 +1,7 @@
 import csv
 import sys
 import random
+from urllib.parse import urlparse
 
 import cleantext
 
@@ -30,7 +31,8 @@ with open('data/FakeNewsCorpus.csv', 'rU', newline='') as csvfile:
             continue
         ct = cleantext.cleanText(row[5])
         data.append([ct, row[3]])
-        print(row[1])
+        loc = urlparse(row[4]).netloc
+        print(row[1], loc)
         total += 1
         if totalFake >= EACH and totalReal >= EACH:
             break

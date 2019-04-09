@@ -1,0 +1,12 @@
+#!/bin/tcsh
+#PBS -l walltime=02:00:00
+#PBS -N FakeNewsChiSq
+#PBS -l nodes=1:hail:ppn=1
+#PBS -l mem=30gb
+#PBS -j oe
+#PBS -m aef
+
+cd $PBS_O_WORKDIR
+module load anaconda3/4.4.0
+
+/usr/bin/time -f "%E %M" python3 chisquared.py

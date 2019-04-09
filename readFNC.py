@@ -22,17 +22,7 @@ with open('data/FakeNewsCorpus.csv', 'rU', newline='') as csvfile:
     for row in reader:
         if len(row) < 16:
             continue
-        if row[3] == 'fake':
-            if totalFake >= EACH:
-                continue
-            totalFake += 1
-        elif row[3] == 'reliable':
-            if totalReal >= EACH:
-                continue
-            totalReal += 1
-        else:
-            continue
-        ct = cleantext.cleanText(row[5])
+
         loc = urlparse(row[4]).hostname
         loc = loc.replace("www.", "")
         if loc in dontuse:
@@ -43,6 +33,19 @@ with open('data/FakeNewsCorpus.csv', 'rU', newline='') as csvfile:
             source[loc] = 1
         if source[loc] > PERSRC:
             continue
+
+        if row[3] == 'fake':
+            if totalFake >= EACH:
+                continue
+            totalFake += 1
+        elif row[3] == 'reliable':
+            if totalReal >= EACH:
+                continue
+            totalReal += 1
+        else:
+            continue
+
+        ct = cleantext.cleanText(row[5])
         data.append([ct, row[3]])
         print(row[1], loc)
         total += 1

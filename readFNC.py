@@ -10,10 +10,13 @@ csv.field_size_limit(sys.maxsize)
 totalReal = 0
 totalFake = 0
 total = 0
+
 EACH = 5000
+PERSRC = 50
+dontuse = []
 
 data = []
-
+source = {}
 with open('data/FakeNewsCorpus.csv', 'rU', newline='') as csvfile:
     reader = csv.reader(csvfile, dialect='excel')
     for row in reader:
@@ -30,8 +33,16 @@ with open('data/FakeNewsCorpus.csv', 'rU', newline='') as csvfile:
         else:
             continue
         ct = cleantext.cleanText(row[5])
-        data.append([ct, row[3]])
         loc = urlparse(row[4]).netloc
+        if loc in dontuse:
+            continue
+        if loc in source:
+            source[loc] += 1
+        else:
+            source[loc] = 1
+        if source[loc] > PERSRC:
+            continue
+        data.append([ct, row[3]])
         print(row[1], loc)
         total += 1
         if totalFake >= EACH and totalReal >= EACH:

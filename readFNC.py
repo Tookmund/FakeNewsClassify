@@ -33,7 +33,8 @@ with open('data/FakeNewsCorpus.csv', 'rU', newline='') as csvfile:
         else:
             continue
         ct = cleantext.cleanText(row[5])
-        loc = urlparse(row[4]).netloc
+        loc = urlparse(row[4]).hostname
+        loc = loc.replace("www.", "")
         if loc in dontuse:
             continue
         if loc in source:

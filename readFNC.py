@@ -23,8 +23,9 @@ with open('data/FakeNewsCorpus.csv', 'rU', newline='') as csvfile:
         if len(row) < 16:
             continue
 
-        loc = urlparse(row[4]).hostname
-        loc = loc.replace("www.", "")
+        loc = urlparse(row[4]).netloc
+        if loc.startswith("www."):
+            loc = loc[4:]
         if loc in dontuse:
             continue
         if loc in source:

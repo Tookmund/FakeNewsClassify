@@ -13,7 +13,7 @@ total = 0
 
 EACH = 5000
 PERSRC = 50
-dontuse = []
+dontuse = ["baptistnews.com"]
 
 data = []
 source = {}

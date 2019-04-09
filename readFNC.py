@@ -10,7 +10,10 @@ csv.field_size_limit(sys.maxsize)
 totalReal = 0
 totalFake = 0
 total = 0
+
 EACH = 5000
+PERSRC = 50
+dontuse = []
 
 data = []
 source = {}
@@ -31,11 +34,13 @@ with open('data/FakeNewsCorpus.csv', 'rU', newline='') as csvfile:
             continue
         ct = cleantext.cleanText(row[5])
         loc = urlparse(row[4]).netloc
+        if loc in dontuse:
+            continue
         if loc in source:
             source[loc] += 1
         else:
             source[loc] = 1
-        if source[loc] > 50:
+        if source[loc] > PERSRC:
             continue
         data.append([ct, row[3]])
         print(row[1], loc)

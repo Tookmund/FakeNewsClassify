@@ -12,7 +12,7 @@ totalReal = 0
 totalFake = 0
 total = 0
 
-EACH = 5000
+EACH = 8000
 PERSRC = 100
 dontuse = ["baptistnews.com"]
 

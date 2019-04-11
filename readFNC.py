@@ -2,6 +2,7 @@ import csv
 import sys
 import random
 from urllib.parse import urlparse
+import re
 
 import cleantext
 
@@ -12,11 +13,13 @@ totalFake = 0
 total = 0
 
 EACH = 5000
-PERSRC = 50
+PERSRC = 100
 dontuse = ["baptistnews.com"]
 
 data = []
 source = {}
+
+host = re.compile(r"(\w+\.)*(\w+\.\w+)")
 with open('data/FakeNewsCorpus.csv', 'rU', newline='') as csvfile:
     reader = csv.reader(csvfile, dialect='excel')
     for row in reader:
@@ -24,8 +27,9 @@ with open('data/FakeNewsCorpus.csv', 'rU', newline='') as csvfile:
             continue
 
         loc = urlparse(row[4]).netloc
-        if loc.startswith("www."):
-            loc = loc[4:]
+        if loc == '':
+            continue
+        loc = host.match(loc).group(2)
         if loc in dontuse:
             continue
         if loc in source:

@@ -33,11 +33,11 @@ with open('data/FakeNewsCorpus.csv', 'rU', newline='') as csvfile:
         if loc in dontuse:
             continue
         if loc in source:
+            if source[loc] >= PERSRC:
+                continue
             source[loc] += 1
         else:
             source[loc] = 1
-        if source[loc] > PERSRC:
-            continue
 
         if row[3] == 'fake':
             if totalFake >= EACH:
@@ -56,6 +56,9 @@ with open('data/FakeNewsCorpus.csv', 'rU', newline='') as csvfile:
         total += 1
         if totalFake >= EACH and totalReal >= EACH:
             break
+
+for s, n in source.items():
+    print(s, ":", n)
 
 print("Real: %d" % totalReal)
 print("Fake: %d" % totalFake)

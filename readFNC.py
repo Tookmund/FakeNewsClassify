@@ -19,7 +19,7 @@ dontuse = ["baptistnews.com"]
 data = []
 source = {}
 
-host = re.compile(r"(\w+\.)*(\w+\.\w+)")
+host = re.compile(r"([^\.\s]+\.)*([^\.\s]+\.[^\.\s]+)")
 with open('data/FakeNewsCorpus.csv', 'rU', newline='') as csvfile:
     reader = csv.reader(csvfile, dialect='excel')
     for row in reader:

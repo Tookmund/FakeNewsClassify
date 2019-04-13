@@ -14,7 +14,7 @@ total = 0
 
 EACH = 8000
 PERSRC = 100
-dontuse = ["baptistnews.com"]
+dontuse = ["baptistnews.com", "nfl.com", "mlb.com"]
 
 data = []
 source = {}

@@ -2,7 +2,6 @@ import csv
 import sys
 import random
 from urllib.parse import urlparse
-import re
 import pickle
 
 import cleantext
@@ -32,21 +31,12 @@ def loaddata():
     global total
     global totalReal
     global totalFake
-    host = re.compile(r"(w+\S*\.|m\.|mobile\.)*((?:[^\.\s]+\.)+[^\.\s]+)$")
     with open('data/FakeNewsCorpus.csv', 'rU', newline='') as csvfile:
         reader = csv.reader(csvfile, dialect='excel')
         for row in reader:
             if len(row) < 16:
                 continue
-
-            nl = urlparse(row[4]).netloc
-            if nl == '':
-                continue
-            try:
-                loc = host.match(nl).group(2)
-            except:
-                print(nl, host.match(nl))
-                sys.exit(1)
+            loc = row[2]
             if loc in dontuse:
                 continue
             if loc in source:

@@ -28,10 +28,12 @@ dontuse = [
 data = []
 source = {}
 
-def loaddata():
+def loaddata(cleaned=True):
+    global data
     global total
     global totalReal
     global totalFake
+    data = []
     with open('data/FakeNewsCorpus.csv', 'rU', newline='') as csvfile:
         reader = csv.reader(csvfile, dialect='excel')
         for row in reader:
@@ -58,7 +60,10 @@ def loaddata():
             else:
                 continue
 
-            ct = cleantext.cleanText(row[5])
+            if cleaned:
+                ct = cleantext.cleanText(row[5])
+            else:
+                ct = row[5]
             data.append([ct, row[3]])
             print(row[1], loc)
             total += 1
@@ -68,8 +73,9 @@ def loaddata():
     for s, n in source.items():
         print(s, ":", n)
 
-    with open("data/fncdata.pkl", "wb") as p:
-        pickle.dump([total, totalFake, totalReal, data], p)
+    if cleaned:
+        with open("data/fncdata.pkl", "wb") as p:
+            pickle.dump([total, totalFake, totalReal, data], p)
 
 try:
     with open("data/fncdata.pkl", 'rb') as p:

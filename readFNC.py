@@ -32,7 +32,7 @@ def loaddata():
     global total
     global totalReal
     global totalFake
-    host = re.compile(r"(w+\S*\.|m\.|mobile\.)*([^\.\s]+\.[^\.\s]+)$")
+    host = re.compile(r"(w+\S*\.|m\.|mobile\.)*((?:[^\.\s]+\.)+[^\.\s]+)$")
     with open('data/FakeNewsCorpus.csv', 'rU', newline='') as csvfile:
         reader = csv.reader(csvfile, dialect='excel')
         for row in reader:

@@ -16,13 +16,12 @@ EACH = 5000
 PERSRC = 100
 dontuse = [
         "baptistnews.com",
-        "nfl.com", "mlb.com", "nba.com",
-        "empiresports.co",
-        "sportspickle.com",
-        "cbssports.com",
-        "nz.sports",
-        "sports.yahoo",
-        "olympics.blogs"]
+        "www.nfl.com", "m.mlb.com", "www.nba.com",
+        "www.cbssports.com",
+        "nz.sports.yahoo.com",
+        "sports.yahoo.com",
+        "olympics.blogs"
+        ]
 
 data = []
 source = {}

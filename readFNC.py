@@ -39,10 +39,14 @@ def loaddata():
             if len(row) < 16:
                 continue
 
-            loc = urlparse(row[4]).netloc
-            if loc == '':
+            nl = urlparse(row[4]).netloc
+            if nl == '':
                 continue
-            loc = host.match(loc).group(2)
+            try:
+                loc = host.match(nl).group(2)
+            except:
+                print(nl, host.match(nl))
+                sys.exit(1)
             if loc in dontuse:
                 continue
             if loc in source:

@@ -20,7 +20,9 @@ dontuse = [
         "www.cbssports.com",
         "nz.sports.yahoo.com",
         "sports.yahoo.com",
-        "olympics.blogs"
+        "olympics.blogs",
+        "de.finance.yahoo.com",
+        "der-postillon.com"
         ]
 
 data = []

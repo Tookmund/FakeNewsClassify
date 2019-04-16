@@ -14,7 +14,15 @@ total = 0
 
 EACH = 5000
 PERSRC = 100
-dontuse = ["baptistnews.com", "nfl.com", "mlb.com"]
+dontuse = [
+        "baptistnews.com",
+        "nfl.com", "mlb.com"
+        "empiresports.co",
+        "sportspickle.com",
+        "cbssports.com",
+        "nz.sports",
+        "sports.yahoo",
+        "olympics.blogs"]
 
 data = []
 source = {}

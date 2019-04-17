@@ -12,8 +12,8 @@ totalReal = 0
 totalFake = 0
 total = 0
 
-EACH = 5000
-PERSRC = 100
+EACH = 10000
+PERSRC = 150
 dontuse = [
         "baptistnews.com",
         "www.nfl.com", "m.mlb.com", "www.nba.com",

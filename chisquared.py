@@ -1,6 +1,6 @@
 import nltk
 
-import readFNC
+import readFNC as ds
 
 # Who are the authors we are analyzing?
 authors = ("fake", "reliable")
@@ -9,16 +9,16 @@ author_tokens = {}
 for a in authors:
     author_tokens[a] = []
 
-TEST = int(readFNC.total/2)
+TEST = int(ds.total/2)
 for i in range(TEST):
-    d = readFNC.data[i]
+    d = ds.data[i]
     author_tokens[d[1]].extend(d[0])
 
 author_tokens["Disputed"] = []
 correct_author = []
-for i in range(TEST, readFNC.total):
-    author_tokens["Disputed"].append(readFNC.data[i][0])
-    correct_author.append(readFNC.data[i][1])
+for i in range(TEST, ds.total):
+    author_tokens["Disputed"].append(ds.data[i][0])
+    correct_author.append(ds.data[i][1])
 
 author_length_distributions = {}
 correct = 0

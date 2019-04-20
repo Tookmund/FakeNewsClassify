@@ -1,4 +1,5 @@
 import os
+import random
 
 import cleantext
 
@@ -20,12 +21,12 @@ for n in os.listdir(DATASET+"/legit"):
         data.append([ct, "legit"])
         totalReal += 1
 
+random.shuffle(data)
 total = totalFake + totalReal
 
 print("Real: %d" % totalReal)
 print("Fake: %d" % totalFake)
 print("Total: %d" % total)
-
 # for compatability
 def loaddata(b):
     pass

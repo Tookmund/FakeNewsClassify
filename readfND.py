@@ -18,7 +18,7 @@ for n in os.listdir(DATASET+"/fake"):
 for n in os.listdir(DATASET+"/legit"):
     with open(DATASET+"/legit/"+n) as f:
         ct = cleantext.cleanText(f.read())
-        data.append([ct, "legit"])
+        data.append([ct, "reliable"])
         totalReal += 1
 
 random.shuffle(data)

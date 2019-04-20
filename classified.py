@@ -1,5 +1,5 @@
 import nltk
-import readFNC as ds
+import readfND as ds
 
 allwords = nltk.FreqDist(w.lower() for d in ds.data for w in d[0])
 

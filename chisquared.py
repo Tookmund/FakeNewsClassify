@@ -1,6 +1,6 @@
 import nltk
 
-import readFNC as ds
+import readfND as ds
 
 # Who are the authors we are analyzing?
 authors = ("fake", "reliable")

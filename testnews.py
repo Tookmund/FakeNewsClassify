@@ -1,5 +1,5 @@
 import subprocess
-import readFNC as ds
+import readfND as ds
 
 ds.loaddata(False)
 

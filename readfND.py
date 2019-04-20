@@ -25,3 +25,7 @@ total = totalFake + totalReal
 print("Real: %d" % totalReal)
 print("Fake: %d" % totalFake)
 print("Total: %d" % total)
+
+# for compatability
+def loaddata(b):
+    pass

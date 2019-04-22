@@ -9,7 +9,7 @@ test = svm.classify_many(x[0] for x in classified.testSet)
 correct = 0
 
 for i in range(len(test)):
-    if test[i] == classified.readFNC.data[i+classified.TESTNUM][1]:
+    if test[i] == classified.ds.data[i+classified.TESTNUM][1]:
         correct += 1
 
 correct /= len(test)

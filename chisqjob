@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/tcsh
 #PBS -l walltime=04:00:00
 #PBS -N FakeNewsChiSq
 #PBS -l nodes=1:hail:ppn=1

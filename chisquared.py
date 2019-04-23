@@ -66,7 +66,7 @@ def chisq(i):
     else:
         return 0
 
-p = Pool(8)
+p = Pool(4)
 clist = p.map(chisq, range(len(author_tokens["Disputed"])))
 correct = sum(clist)
 

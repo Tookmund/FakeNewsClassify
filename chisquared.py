@@ -1,4 +1,5 @@
 import nltk
+from multiprocessing import Pool
 
 import readFNC as ds
 
@@ -20,10 +21,14 @@ for i in range(TEST, ds.total):
     author_tokens["Disputed"].append(ds.data[i][0])
     correct_author.append(ds.data[i][1])
 
-author_length_distributions = {}
-correct = 0
 # Calculate chisquared for each of the two candidate authors
 for i in range(len(author_tokens["Disputed"])):
+
+p = Pool(8)
+clist = p.map(chisq, author_tokens["Disputed"])
+correct = sum(clist)
+
+def chisq(d):
     d = author_tokens["Disputed"][i]
     da = {}
     for author in authors:
@@ -63,6 +68,8 @@ for i in range(len(author_tokens["Disputed"])):
         da[author] = chisquared
     auth = min((v, k) for (k,v) in da.items())[1]
     if auth == correct_author[i]:
-        correct += 1
+	return 1
+    else:
+        return 0
 
 print(correct/len(author_tokens["Disputed"]))

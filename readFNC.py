@@ -12,17 +12,17 @@ totalReal = 0
 totalFake = 0
 total = 0
 
-EACH = 8000
-PERSRC = 150
+EACH = 5000
+PERSRC = 100
 dontuse = [
-#        "baptistnews.com",
-#        "www.nfl.com", "m.mlb.com", "www.nba.com",
-#        "www.cbssports.com",
-#        "nz.sports.yahoo.com",
-#        "sports.yahoo.com",
-#        "olympics.blogs",
-#        "de.finance.yahoo.com",
-#        "der-postillon.com"
+        "baptistnews.com",
+        "www.nfl.com", "m.mlb.com", "www.nba.com",
+        "www.cbssports.com",
+        "nz.sports.yahoo.com",
+        "sports.yahoo.com",
+        "olympics.blogs",
+        "de.finance.yahoo.com",
+        "der-postillon.com"
         ]
 
 data = []

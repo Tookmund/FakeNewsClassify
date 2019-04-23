@@ -1,0 +1,58 @@
+Warning: no access to tty (Bad file descriptor).
+Thus no job control in this shell.
+Real: 8000
+Fake: 8000
+Total: 16000
+0.793
+Most Informative Features
+       contains(impeach) = True             fake : reliab =     24.8 : 1.0
+       contains(sheriff) = True             fake : reliab =     21.6 : 1.0
+        contains(stocks) = True           reliab : fake   =     18.3 : 1.0
+           contains(que) = True           reliab : fake   =     16.7 : 1.0
+        contains(scored) = True           reliab : fake   =     14.6 : 1.0
+      contains(unlawful) = True             fake : reliab =     13.9 : 1.0
+      contains(patriots) = True             fake : reliab =     13.0 : 1.0
+            contains(pm) = True           reliab : fake   =     12.4 : 1.0
+     contains(touchdown) = True           reliab : fake   =     11.2 : 1.0
+       contains(cookies) = True             fake : reliab =     11.1 : 1.0
+    contains(conspiracy) = True             fake : reliab =     11.0 : 1.0
+       contains(editing) = True           reliab : fake   =     11.0 : 1.0
+            contains(en) = True           reliab : fake   =     10.3 : 1.0
+   contains(impeachment) = True             fake : reliab =     10.0 : 1.0
+       contains(liberty) = True             fake : reliab =      9.8 : 1.0
+   contains(obstruction) = True             fake : reliab =      9.7 : 1.0
+           contains(los) = True           reliab : fake   =      9.6 : 1.0
+            contains(un) = True           reliab : fake   =      9.5 : 1.0
+    contains(chancellor) = True           reliab : fake   =      9.5 : 1.0
+         contains(index) = True           reliab : fake   =      9.5 : 1.0
+         contains(coach) = True           reliab : fake   =      9.2 : 1.0
+           contains(god) = True             fake : reliab =      9.2 : 1.0
+       contains(scoring) = True           reliab : fake   =      8.9 : 1.0
+          contains(memo) = True             fake : reliab =      8.7 : 1.0
+          contains(club) = True           reliab : fake   =      8.7 : 1.0
+        contains(summit) = True           reliab : fake   =      8.5 : 1.0
+       contains(stadium) = True           reliab : fake   =      8.4 : 1.0
+  contains(championship) = True           reliab : fake   =      8.3 : 1.0
+      contains(receiver) = True           reliab : fake   =      8.2 : 1.0
+      contains(treasury) = True             fake : reliab =      8.1 : 1.0
+       contains(corrupt) = True             fake : reliab =      8.1 : 1.0
+            contains(la) = True           reliab : fake   =      8.0 : 1.0
+       contains(citizen) = True             fake : reliab =      8.0 : 1.0
+            contains(el) = True           reliab : fake   =      7.1 : 1.0
+        contains(fourth) = True           reliab : fake   =      6.9 : 1.0
+        contains(resign) = True             fake : reliab =      6.6 : 1.0
+        contains(proven) = True             fake : reliab =      6.5 : 1.0
+        contains(emails) = True             fake : reliab =      6.4 : 1.0
+        contains(prices) = True           reliab : fake   =      6.4 : 1.0
+        contains(agents) = True             fake : reliab =      6.4 : 1.0
+     contains(concealed) = True             fake : reliab =      6.2 : 1.0
+        contains(shares) = True           reliab : fake   =      6.1 : 1.0
+    contains(everywhere) = True             fake : reliab =      6.0 : 1.0
+       contains(trading) = True           reliab : fake   =      5.8 : 1.0
+contains(infrastructure) = True           reliab : fake   =      5.6 : 1.0
+       contains(quarter) = True           reliab : fake   =      5.6 : 1.0
+      contains(liberals) = True             fake : reliab =      5.5 : 1.0
+     contains(investors) = True           reliab : fake   =      5.4 : 1.0
+       contains(markets) = True           reliab : fake   =      5.4 : 1.0
+ contains(conservatives) = True             fake : reliab =      5.4 : 1.0
+3:50.49 3644644

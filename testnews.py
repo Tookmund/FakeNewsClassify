@@ -7,8 +7,10 @@ TOTAL = 20
 correct = 0
 for i in range(TOTAL):
     d = ds.data[i]
-    subprocess.run(['less'], input=bytes(' '.join(d[0]), 'utf-8'))
-    inp = input("[r]eal or [f]ake?")
+    subprocess.run(['clear'])
+    print(d[0])
+    #subprocess.run(['less'], input=bytes(''.join(d[0]), 'utf-8'))
+    inp = input("\n[r]eal or [f]ake?")
     if inp.startswith('r'):
         if d[1] == 'reliable':
             correct += 1

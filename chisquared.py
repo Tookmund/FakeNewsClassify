@@ -21,14 +21,8 @@ for i in range(TEST, ds.total):
     author_tokens["Disputed"].append(ds.data[i][0])
     correct_author.append(ds.data[i][1])
 
-# Calculate chisquared for each of the two candidate authors
-for i in range(len(author_tokens["Disputed"])):
 
-p = Pool(8)
-clist = p.map(chisq, author_tokens["Disputed"])
-correct = sum(clist)
-
-def chisq(d):
+def chisq(i):
     d = author_tokens["Disputed"][i]
     da = {}
     for author in authors:
@@ -68,8 +62,12 @@ def chisq(d):
         da[author] = chisquared
     auth = min((v, k) for (k,v) in da.items())[1]
     if auth == correct_author[i]:
-	return 1
+        return 1
     else:
         return 0
+
+p = Pool(8)
+clist = p.map(chisq, range(len(author_tokens["Disputed"])))
+correct = sum(clist)
 
 print(correct/len(author_tokens["Disputed"]))

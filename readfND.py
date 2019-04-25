@@ -24,7 +24,7 @@ def loaddata(cleaned=True):
             if cleaned:
                 ct = cleantext.cleanText(f.read())
             else:
-                ct = f.read()
+                ct = cleantext.toWords(f.read())
             data.append([ct, "fake"])
             totalFake += 1
     for n in os.listdir(DATASET+"/legit"):

@@ -63,7 +63,7 @@ def loaddata(cleaned=True):
             if cleaned:
                 ct = cleantext.cleanText(row[5])
             else:
-                ct = row[5]
+                ct = cleantext.toWords(row[5])
             data.append([ct, row[3]])
             print(row[1], loc)
             total += 1

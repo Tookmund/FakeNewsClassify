@@ -28,7 +28,7 @@ dontuse = [
 data = []
 source = {}
 
-def loaddata(cleaned=True):
+def loaddata(cleaned=False):
     global data
     global total
     global totalReal
@@ -73,9 +73,8 @@ def loaddata(cleaned=True):
     for s, n in source.items():
         print(s, ":", n)
 
-    if cleaned:
-        with open("data/fncdata.pkl", "wb") as p:
-            pickle.dump([total, totalFake, totalReal, data], p)
+    with open("data/fncdata.pkl", "wb") as p:
+        pickle.dump([total, totalFake, totalReal, data], p)
 
 try:
     with open("data/fncdata.pkl", 'rb') as p:

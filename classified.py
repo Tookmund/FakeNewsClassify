@@ -17,6 +17,10 @@ def documentFeatures(document):
             features[c] += 1
         else:
             features[c] = 1
+    for f, v in features.items():
+        if f.startswith('count'):
+            features[f] = v/len(document)
+            print(features[f])
     return features
 
 featuresets = [(documentFeatures(d[0]), d[1]) for d in ds.data]

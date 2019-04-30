@@ -32,7 +32,7 @@ def loaddata(cleaned=True):
             if cleaned:
                 ct = cleantext.cleanText(f.read())
             else:
-                ct = f.read()
+                ct = cleantext.toWords(f.read())
             data.append([ct, "reliable"])
             totalReal += 1
 
